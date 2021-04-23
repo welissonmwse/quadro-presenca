@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/styles/listar.css">
+    <link rel="stylesheet" href="/styles/modal.css" />
+
+    <script src="scripts/listar.js" defer type="module"></script>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nº ordenação</th>
+                    <th>Posto</th>
+                    <th>Quadro</th>
+                    <th>Nome</th>
+                    <th></th>
+                    <th>
+                        <a href="/">
+                            <img src="/platinas/back.svg" alt="Editar">
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% oficiais.forEach(oficial => {%>
+                    <tr data-id="<%= oficial.id %>">
+                        <td><%= oficial.idorder %> </td>
+                        <td><%= oficial.posto %> </td>
+                        <td><%= oficial.quadro %> </td>
+                        <td><%= oficial.nome %> </td>
+                        <td>
+                            <a href="/oficial/<%=oficial.id%>">
+                                <button class="edit" type="button">
+                                    <img src="/platinas/edit-24.svg" alt="Editar">
+                                </button>
+                            </a>
+                        </td>
+                        <td>
+                            <button class="delete" type="button">
+                                <img src="/platinas/trash-24.svg" alt="Excluir">
+                            </button>
+                        </td>
+                    </tr>
+                <%}); %> 
+            </tbody>
+        </table>
+    </div>
+    <div class="modal-wrapper">
+        <div class="modal">
+          <img src="/platinas/trash-48.svg" alt="Excluir Oficial" title="Excluir Oficial" />
+          <h3>Excluir Oficial</h3>
+          <p>Quer mesmo excluir esse oficial? <br/>
+          Ele será apagado para sempre.  
+          </p>
+          <footer>
+            <a 
+              class="button red" 
+              href="#">Cancelar</a>
+            <button
+              class="button "
+              type="submit"
+              form="delete-oficial">Excluir Oficial</button>
+          </footer>
+        </div>
+        <form 
+          method="post" 
+          action="/oficial/delete" 
+          id="delete-oficial"></form>
+      </div>
+</body>
+</html>

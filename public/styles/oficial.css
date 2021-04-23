@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../platinas/fundo.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color:#FFF;
+    background-size: 30%;
+    background-position: center;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+form{
+    max-width: 700px;
+    width: 100%;
+}
+
+fieldset{
+    padding: 20px;
+    border-radius: 5px;;
+}
+
+fieldset legend{
+    font-size: 40px;
+    text-align: center;
+}
+
+.inpunt-group,
+.select-group{
+    display: flex;
+    gap: 10px;
+    width:100%;
+    margin-top: 30px;
+}
+
+.inpunt-group div,
+.select-group div{
+    width:50%;
+}
+
+.inpunt-group div input,
+.select-group div select{
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #616060;
+    background-color: #fff;
+}
+
+label{
+    font-size: 20px;
+    display: block;
+}
+
+.button-group{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.button{
+    padding: 10px;
+    width: 150px;
+    
+    color: #fff;
+    border-radius: 5px;
+    
+    font-size: 20px;
+    font-weight: 400;
+
+    transition: opacity 0.2s;
+}
+
+button{
+    background: #0000ffb7;
+    border: none;
+    cursor: pointer;
+}
+
+.button.red{
+    text-align: center;
+    background: #e93636;
+    text-decoration: none;
+}
+
+.button:hover{
+    opacity: 0.8;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br>">
+
+	<head>
+		<title>QUADRO DE PRESENÇA</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" href="img/brasao_sgm.png">
+		
+		<link href="/styles/style.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body onload="init()">
+		<header>
+			<h1>Quadro de Presença<br>Secretaria-Geral Marinha</h1>
+		</header>
+		<main class="teste">	
+			<div class="container-esquerda">
+				<ul class="coluna-left" id="col-esq">
+					<% oficiais.forEach((oficial, index) => { %>
+						<% if(index < oficiais.length / 2) {%> 
+							<li class="li-img <%= oficial.posto %>-<%= oficial.quadro %>"></li>
+							<li class="text"><%= oficial.posto %> <%= oficial.quadro === 'ARM' ? ' ' : '('+oficial.quadro+')' %> <%= oficial.nome %></li>
+							<div class="liga-desliga">
+								<input type="checkbox" class="liga-desliga__checkbox" id="liga-desliga<%= oficial.id %>">
+								<label for="liga-desliga<%= oficial.id %>" class="liga-desliga__botao"></label>
+							</div>
+						<% } %> 
+					<% }) %> 
+				</ul>
+			</div>
+			<div class="container-direita">
+				<ul class="coluna-right" id="col-dir">
+					<% oficiais.forEach((oficial, index) => { %>
+						<% if(index > (oficiais.length / 2) - 1) {%> 
+							<li class="li-img <%= oficial.posto %>-<%= oficial.quadro %>"></li>
+							<li class="text"><%= oficial.posto %> <%= oficial.quadro === 'ARM' ? ' ' : '('+oficial.quadro+')' %> <%= oficial.nome %></li>
+							<div class="liga-desliga">
+								<input type="checkbox" class="liga-desliga__checkbox" id="liga-desliga<%= oficial.id %>">
+								<label for="liga-desliga<%= oficial.id %>" class="liga-desliga__botao"></label>
+							</div>
+						<% } %> 
+					<% }) %> 
+				</ul>
+			</div>
+			
+			
+		</main>
+
+		<footer>
+			<div class="date-time">
+				<span id="Clock">00:00:00</span>
+				<p class="data"></p>
+			</div>
+
+			<div class="btns">
+				<a href="/oficial">Cadatrar</a>
+				<a href="/listar">Listar</a>
+			</div>
+		</footer>
+
+		<script src="/scripts/script.js"></script>
+    </body>
+</html>

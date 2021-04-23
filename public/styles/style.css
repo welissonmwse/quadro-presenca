@@ -1,0 +1,211 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body {
+    background-image: url(../platinas/fundo.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color:#FFF;
+    background-size: 80%;
+    background-position: center;
+    font-weight: bold;
+}
+
+main{
+	display: flex;
+	margin: 0 50px;
+}
+
+header {
+    margin: 50px;
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color:#0092ff;
+	box-shadow: 3px 2px 3px #000;
+}
+
+h1{
+	color: #FFF;
+	font-size: 30px;
+}
+
+li{
+	list-style: none;
+}
+
+.text {
+    text-align: center;
+    display: block;
+    transform: translate(100px, -70px);
+    font-size: 19px;
+    width: 450px; 
+}
+
+.liga-desliga {
+    
+    float: left;
+    transform: translate(285px, -70px);
+    font-size: 145%;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    background: #0092ff;
+    color: #FFF;
+    box-shadow: 3px 2px 3px #000;
+    margin: 50px;
+    margin-bottom: 10px;
+    clear: both;
+}
+
+.date-time {
+    flex: 1;
+    text-align: center;
+    font-size: 30px;
+    text-transform: capitalize;  
+}
+
+footer a{
+    text-decoration: none;
+    color: #FFF;
+    margin: 10px;
+}
+
+footer a:hover{
+    text-decoration: underline;
+    opacity: 0.5;
+}
+
+.data {
+    transform: translate(17px, -5px);
+}
+
+.container-direita,
+.container-esquerda {
+    width: 50%;
+}
+
+.li-img{
+	width: 167px;
+    height: 65px;
+    text-indent: -9999px;
+}
+
+.AE-ARM {
+    background:url(../platinas/ae.png) no-repeat;
+}
+
+.VA-IM {
+    background:url(../platinas/ae.png) no-repeat;
+}
+
+.CA-IM {
+    background:url(../platinas/ca-im.png) no-repeat;
+}
+
+.CMG-IM {
+    background:url(../platinas/cmg-im.png) no-repeat;
+}
+
+.CF-IM {
+    background:url(../platinas/cf-im.png) no-repeat;
+}
+
+.CF-T {
+    background:url(../platinas/cf-t.png) no-repeat;
+}
+
+.CC-IM {
+    background:url(../platinas/cc-im.png) no-repeat;
+}
+
+.CC-T {
+    background:url(../platinas/cc-t.png) no-repeat;
+}
+
+.CC {
+    background:url(../platinas/cc.png) no-repeat;
+}
+
+.CT-T {
+    background:url(../platinas/ct-t.png) no-repeat;
+}
+
+.CT-IM {
+    background:url(../platinas/ct-im.png) no-repeat;
+}
+
+.CT-EN {
+    background:url(../platinas/ct-en.png) no-repeat;
+}
+
+.CT-AA {
+    background:url(../platinas/ct-aa.png) no-repeat;
+}
+
+.primeiro-T-AA {
+    background:url(../platinas/1-ten-aa.png) no-repeat;
+}
+
+.primeiro-T-RM2 {
+    background:url(../platinas/1-ten-rm2.png) no-repeat;
+}
+
+.primeiro-T {
+    background:url(../platinas/1-ten.png) no-repeat;
+}
+
+.liga-desliga__checkbox {
+    position: absolute;
+    left: -9999px;
+}
+
+.liga-desliga__botao {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    cursor: pointer;
+}
+
+.liga-desliga__botao::before,
+.liga-desliga__botao::after {
+    content: "";
+    box-shadow: 0 0 0 1px #CCC;
+    transition: all 0.2s ease;
+}
+
+.liga-desliga__botao::before {
+    display: inline-block;
+    border-radius: 1em;
+    height: 1em;
+    width: 2em;
+    margin-right: 0.5em;
+    background: #F1F1F1;
+	box-shadow: 1px 2px 1px #000;
+}
+
+.liga-desliga__botao::after {
+    position: absolute;
+    top: 0.025em;
+    left: 0.025em;
+    width: 0.95em;
+    height: 0.95em;
+    border-radius: 100%;
+    background: #FFF;
+}
+
+.liga-desliga__checkbox:checked + .liga-desliga__botao::before {
+    background: #0092ff;
+}
+
+.liga-desliga__checkbox:checked + .liga-desliga__botao::after {
+    left: 1.025em;
+}
+
+.liga-desliga__checkbox:focus + .liga-desliga__botao::before {
+    outline: 3px dotted #CCC;
+}

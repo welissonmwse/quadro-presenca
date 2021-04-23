@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/oficial.css">
+    
+    <title>Cadastro|Oficial</title>
+</head>
+<body>
+    <div class="container">
+        <form id="form-oficial" action="/oficial" method="POST">
+            <fieldset>
+                <legend>Dados do Ofical</legend>
+                <div class="inpunt-group">
+                    <div>
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" required >
+                    </div>
+                    <div>
+                        <label for="idorder">Nº ordenação</label>
+                        <input type="number" id="idorder" name="idorder" min="1" required>
+                    </div>
+                </div>
+                <div class="select-group">
+                    <div>
+                        <label for="posto">Posto</label>
+                    
+                        <select id="posto" name="posto">
+                            <option value="AE">AE</option>
+                            <option value="VA">VA</option>
+                            <option value="CA">CA</option>
+                            <option value="CMG">CMG</option>
+                            <option value="CF">CF</option>
+                            <option value="CC">CC</option>
+                            <option value="CT">CT</option>
+                            <option value="1T">1T</option>
+                            <option value="2T">2T</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="quadro">Quadro</label>
+                    
+                        <select id="quadro" name="quadro">
+                            <option value="ARM">ARM</option>
+                            <option value="IM">IM</option>
+                            <option value="T">T</option>
+                            <option value="EN">EN</option>
+                            <option value="AA">AA</option>
+                            <option value="RM2">RM2</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button 
+                    class="button green" 
+                    form="form-oficial" 
+                    type="submit" 
+                    title="Salvar Dados">Salvar</button>
+                    <a 
+                    href="/" 
+                    class="button red">
+                    Cancelar
+                    </a>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+   
+</body>
+</html>
