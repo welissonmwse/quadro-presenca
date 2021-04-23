@@ -22,4 +22,4 @@ app.get('/oficial/:id', OficialController.show)
 app.post('/oficial/:id', OficialController.update)
 
 
-app.listen(3000, () => console.log('Rodando....'))
+app.listen(process.env.PORT || 3000, () => console.log('Rodando....'))
