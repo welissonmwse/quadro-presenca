@@ -70,7 +70,7 @@ module.exports = {
 
         await Oficial.update(updateOficial, oficialId)
 
-        res.redirect('/oficial/' + oficialId)
+        res.redirect('/listar')
     },
 
     async delete(req, res){

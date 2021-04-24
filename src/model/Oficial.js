@@ -25,7 +25,7 @@ module.exports = {
             quadro
         )VALUES(
             ${parseInt(newOficial.idorder)},
-            "${newOficial.nome}",
+            UPPER("${newOficial.nome}"),
             "${newOficial.posto}",
             "${newOficial.quadro}"
         )`)
@@ -38,7 +38,7 @@ module.exports = {
 
         await db.run(`UPDATE oficiais SET 
         idorder = ${parseInt(updatedOficial.idorder)},
-        nome = "${updatedOficial.nome}",
+        nome = UPPER("${updatedOficial.nome}"),
         posto = "${updatedOficial.posto}",
         quadro = "${updatedOficial.quadro}"
         WHERE id = ${oficialId}

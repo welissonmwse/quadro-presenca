@@ -2,7 +2,7 @@
   "name": "quadropresenca",
   "version": "1.0.0",
   "description": "",
-  "main": "src/routes.js",
+  "main": "src/server.js",
   "scripts": {
     "server": "node src/routes.js",
     "start": "node ./src/routes.js",

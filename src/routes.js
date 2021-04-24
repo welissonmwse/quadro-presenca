@@ -1,25 +1,15 @@
 const express = require('express')
-const path = require('path')
-const app = express()
+const routes = express.Router()
 
 const OficialController = require('./controllers/OficialController')
 
-app.set('view engine', 'ejs')
+routes.get('/', OficialController.index)
+routes.get('/listar', OficialController.listar)
 
-app.set('views', path.join(__dirname, 'views'))
-app.use(express.static("public"))
+routes.get('/oficial', OficialController.create)
+routes.post('/oficial', OficialController.save)
+routes.post('/oficial/delete/:id', OficialController.delete)
+routes.get('/oficial/:id', OficialController.show)
+routes.post('/oficial/:id', OficialController.update)
 
-app.use(express.urlencoded({extended: true}))
-app.use(express.json())
-
-app.get('/', OficialController.index)
-app.get('/listar', OficialController.listar)
-
-app.get('/oficial', OficialController.create)
-app.post('/oficial', OficialController.save)
-app.post('/oficial/delete/:id', OficialController.delete)
-app.get('/oficial/:id', OficialController.show)
-app.post('/oficial/:id', OficialController.update)
-
-
-app.listen(process.env.PORT || 3000, () => console.log('Rodando....'))
+module.exports = routes;

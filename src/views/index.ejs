@@ -5,7 +5,7 @@
 		<title>QUADRO DE PRESENÇA</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
-		<link rel="icon" href="img/brasao_sgm.png">
+		<link rel="shortcut icon" href="/public/platinas/brasao_sgm.png" type="image/png">
 		
 		<link href="/styles/style.css" rel="stylesheet" type="text/css" />
 	</head>
@@ -33,7 +33,7 @@
 				<ul class="coluna-right" id="col-dir">
 					<% oficiais.forEach((oficial, index) => { %>
 						<% if(index > (oficiais.length / 2) - 1) {%> 
-							<li class="li-img <%= oficial.posto %>-<%= oficial.quadro %>"></li>
+							<li class="li-img <%= oficial.posto === '1T' ? 'primeiro-T' : oficial.posto %>-<%= oficial.quadro %>"></li>
 							<li class="text"><%= oficial.posto %> <%= oficial.quadro === 'ARM' ? ' ' : '('+oficial.quadro+')' %> <%= oficial.nome %></li>
 							<div class="liga-desliga">
 								<input type="checkbox" class="liga-desliga__checkbox" id="liga-desliga<%= oficial.id %>">
