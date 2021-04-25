@@ -19,22 +19,14 @@ module.exports = {
 
     async save(req, res) {
         const oficiais = await Oficial.get()
-        let idAcc = req.body.idorder
-        oficiais.forEach(async (oficial) => {
-            
-            if(idAcc == oficial.idorder){
-                const updateOficial = {
-                    idorder: oficial.idorder + 1,
-                    nome: oficial.nome,
-                    posto: oficial.posto,
-                    quadro: oficial.quadro
-                }
-
-                await Oficial.update(updateOficial, oficial.id)
+        let idAcc = parseInt(req.body.idorder)
+        for await (const oficial of oficiais) {
+            if(idAcc === oficial.idorder){
+                await Oficial.updateOrder(idAcc, oficial.id)
                 idAcc += 1
-                
+                console.log('Entrei no IF ', idAcc)
             }
-        })
+        }
         await Oficial.create({ 
             idorder: req.body.idorder,
             nome: req.body.nome,

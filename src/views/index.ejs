@@ -32,7 +32,7 @@
 			<div class="container-direita">
 				<ul class="coluna-right" id="col-dir">
 					<% oficiais.forEach((oficial, index) => { %>
-						<% if(index > (oficiais.length / 2) - 1) {%> 
+						<% if(index > (oficiais.length / 2)) {%> 
 							<li class="li-img <%= oficial.posto === '1T' ? 'primeiro-T' : oficial.posto %>-<%= oficial.quadro %>"></li>
 							<li class="text"><%= oficial.posto %> <%= oficial.quadro === 'ARM' ? ' ' : '('+oficial.quadro+')' %> <%= oficial.nome %></li>
 							<div class="liga-desliga">

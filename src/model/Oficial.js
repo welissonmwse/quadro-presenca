@@ -4,7 +4,7 @@ module.exports = {
     async get(){
         const db = await Database()
         const data = await db.all(`SELECT * FROM oficiais ORDER BY idorder`)
-
+        
         await db.close()
 
         return data.map(oficial =>({
@@ -47,12 +47,12 @@ module.exports = {
         await db.close()
     },
 
-    async updateOrder(idOrderAcc, oficialId){
+    async updateOrder(idOrderAcc, id){
         const db = await Database()
 
         await db.run(`UPDATE oficiais SET 
-        idorder = ${parseInt(idOrderAcc + 1)}
-        WHERE id = ${oficialId} ORDER BY idorder
+        idorder = ${idOrderAcc + 1}
+        WHERE id = ${id}
         `)
 
         await db.close()
