@@ -12,6 +12,11 @@ module.exports = {
         return res.render('listar', {oficiais})
     },
 
+    async indexAdmin (req, res)  {
+        const oficiais = await Oficial.get()
+        return res.render('admin', {oficiais})
+    },
+
     async create (req, res)  {
         const oficiais = await Oficial.get()
         return res.render('oficial')
@@ -24,7 +29,6 @@ module.exports = {
             if(idAcc === oficial.idorder){
                 await Oficial.updateOrder(idAcc, oficial.id)
                 idAcc += 1
-                console.log('Entrei no IF ', idAcc)
             }
         }
         await Oficial.create({ 
@@ -34,7 +38,7 @@ module.exports = {
             quadro: req.body.quadro
         })
 
-        return res.redirect('/')
+        return res.redirect('/admin')
     },
 
     async show(req, res){

@@ -1,6 +1,7 @@
 *{
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
@@ -11,7 +12,9 @@ body {
     background-size: 80%;
     background-position: center;
     font-weight: bold;
+	font-family: sans-serif;
 }
+
 
 header {
     margin: 50px;
@@ -29,65 +32,7 @@ header h1{
 
 main{
 	display: flex;
-	margin: 0 50px 50px 50px;
-}
-
-li{
-	list-style: none;
-}
-
-.text {
-    display: block;
-    transform: translate(100px, -70px);
-    text-align: center;
-    text-transform: uppercase; 
-    font-size: 19px;
-    width: 450px; 
-}
-
-.liga-desliga {
-    
-    float: left;
-    transform: translate(285px, -70px);
-    font-size: 145%;
-}
-
-footer{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    background: #0092ff;
-    color: #FFF;
-    box-shadow: 3px 2px 3px #000;
-    margin: 50px;
-    margin-bottom: 10px;
-    clear: both;
-}
-
-.date-time {
-    
-    flex: 1;
-    text-align: center;
-    font-size: 30px;
-    text-transform: capitalize;  
-}
-
-footer a{
-    text-decoration: none;
-    color: #FFF;
-    margin: 10px;
-}
-
-footer a:hover{
-    text-decoration: underline;
-    opacity: 0.5;
-}
-
-.data {
-    transform: translate(17px, -5px);
+	margin: 0 50px 100px 50px;
 }
 
 .container-direita,
@@ -95,78 +40,30 @@ footer a:hover{
     width: 50%;
 }
 
+.card{
+	display: flex;
+	width: 100%;
+	height: 85px;
+	padding: 10px;
+	list-style: none;
+}
+
 .li-img{
 	width: 167px;
     height: 65px;
-    text-indent: -9999px;
 }
 
-.AE-ARM {
-    background:url(../platinas/ae.png) no-repeat;
+.card-content{
+	flex: 1;
+	text-align: center;
 }
 
-.VA-IM {
-    background:url(../platinas/ae.png) no-repeat;
-}
-
-.CA-IM {
-    background:url(../platinas/ca-im.png) no-repeat;
-}
-
-.CMG-IM {
-    background:url(../platinas/cmg-im.png) no-repeat;
-}
-
-.CF-IM {
-    background:url(../platinas/cf-im.png) no-repeat;
-}
-
-.CF-T {
-    background:url(../platinas/cf-t.png) no-repeat;
-}
-
-.CC-IM {
-    background:url(../platinas/cc-im.png) no-repeat;
-}
-
-.CC-T {
-    background:url(../platinas/cc-t.png) no-repeat;
-}
-
-.CC {
-    background:url(../platinas/cc.png) no-repeat;
-}
-
-.CT-T {
-    background:url(../platinas/ct-t.png) no-repeat;
-}
-
-.CT-IM {
-    background:url(../platinas/ct-im.png) no-repeat;
-}
-
-.CT-EN {
-    background:url(../platinas/ct-en.png) no-repeat;
-}
-
-.CT-AA {
-    background:url(../platinas/ct-aa.png) no-repeat;
-}
-
-.primeiro-T-AA {
-    background:url(../platinas/1-ten-aa.png) no-repeat;
-}
-
-.primeiro-T-RM2-T {
-    background:url(../platinas/1-ten-rm2.png) no-repeat;
-}
-
-.primeiro-T-T{
-    background:url(../platinas/1-ten.png) no-repeat;
+.liga-desliga{
+	font-size: 23px;
 }
 
 .liga-desliga__checkbox {
-    position: absolute;
+    position: relative;
     left: -9999px;
 }
 
@@ -214,4 +111,48 @@ footer a:hover{
 
 .liga-desliga__checkbox:focus + .liga-desliga__botao::before {
     outline: 3px dotted #CCC;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    background: #0092ff;
+    color: #FFF;
+    box-shadow: 3px 2px 3px #000;
+    margin: 50px;
+    margin-bottom: 10px;
+    clear: both;
+}
+
+.date-time {
+    
+    flex: 1;
+    text-align: center;
+    font-size: 30px;
+    text-transform: capitalize;  
+}
+
+footer a{
+    text-decoration: none;
+    color: #FFF;
+    margin: 10px;
+}
+
+footer a:hover{
+    text-decoration: underline;
+    opacity: 0.5;
+}
+
+.data {
+    transform: translate(17px, -5px);
+}
+
+@media(max-width: 1100px){
+	.text{
+		font-size: 18px;
+	}
 }
