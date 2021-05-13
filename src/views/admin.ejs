@@ -36,7 +36,7 @@
 			<section class="container-direita">
 				<ul class="coluna-right" id="col-dir">
 					<% oficiais.forEach((oficial, index) => { %>
-						<% if(index > (oficiais.length / 2)) {%> 
+						<% if(index >= (oficiais.length / 2)) {%> 
 							<li class="card">
 								<img class="li-img" src="/platinas/<%= oficial.posto %>-<%= oficial.quadro %>.png">
 								<div class="card-content">
