@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br>">
+<head>
+	<title>QUADRO DE PRESENÇA</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" href="/platinas/brasao_sgm.png" type="image/png">
+	
+	<link href="/styles/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onload="init()">
+	<header>
+		<h1>Quadro de Presença<br>Secretaria-Geral da Marinha</h1>
+	</header>
+	<main class="teste">	
+		<section class="container-esquerda">
+			<ul class="coluna-left" id="col-esq"></ul>
+		</section>
+
+		<section class="container-direita">
+			<ul class="coluna-right" id="col-dir"></ul>
+		</section>
+	</main>
+
+	<footer>
+		<div class="date-time">
+			<span id="Clock">00:00:00</span>
+			<p class="data"></p>
+		</div>
+	</footer>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="/scripts/script.js"></script>
+	<script src="/scripts/client.js"></script>
+</body>
+</html>

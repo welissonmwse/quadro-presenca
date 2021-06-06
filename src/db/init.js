@@ -9,7 +9,8 @@ const initDb = {
             idorder INT,
             nome TEXT,
             posto TEXT,
-            quadro TEXT
+            quadro TEXT,
+            status TEXT DEFAULT "null"
         )`)
 
 
@@ -17,12 +18,14 @@ const initDb = {
             idorder,
             nome,
             posto,
-            quadro
+            quadro,
+            status
         )VALUES(
             "1",
             "CAMPOS",
             "AE",
-            "ARM"
+            "ARM",
+            "null"
         );`)
 
         await db.close()

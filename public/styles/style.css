@@ -15,7 +15,6 @@ body {
 	font-family: sans-serif;
 }
 
-
 header {
     margin: 50px;
     margin-top: 10px;
@@ -62,11 +61,6 @@ main{
 	font-size: 23px;
 }
 
-.liga-desliga__checkbox {
-    position: relative;
-    left: -9999px;
-}
-
 .liga-desliga__botao {
     display: inline-block;
     vertical-align: middle;
@@ -101,16 +95,12 @@ main{
     background: #FFF;
 }
 
-.liga-desliga__checkbox:checked + .liga-desliga__botao::before {
+.liga-desliga__botao.checked::before {
     background: #0092ff;
 }
 
-.liga-desliga__checkbox:checked + .liga-desliga__botao::after {
+.liga-desliga__botao.checked::after {
     left: 1.025em;
-}
-
-.liga-desliga__checkbox:focus + .liga-desliga__botao::before {
-    outline: 3px dotted #CCC;
 }
 
 footer{
@@ -134,17 +124,6 @@ footer{
     text-align: center;
     font-size: 30px;
     text-transform: capitalize;  
-}
-
-footer a{
-    text-decoration: none;
-    color: #FFF;
-    margin: 10px;
-}
-
-footer a:hover{
-    text-decoration: underline;
-    opacity: 0.5;
 }
 
 .data {

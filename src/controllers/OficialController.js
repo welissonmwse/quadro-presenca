@@ -1,25 +1,20 @@
 const Oficial = require('../model/Oficial')
+const OficialService = require('../services/OficialServices')
 
 module.exports = {
     
     async index (req, res)  {
-        const oficiais = await Oficial.get()
-        return res.render('index', {oficiais})
+        const oficiais = await OficialService.index()
+        
+        return res.json(oficiais)
     },
 
     async listar (req, res)  {
-        const oficiais = await Oficial.get()
-        return res.render('listar', {oficiais})
-    },
-
-    async indexAdmin (req, res)  {
-        const oficiais = await Oficial.get()
-        return res.render('admin', {oficiais})
+        return res.render('listar.html')
     },
 
     async create (req, res)  {
-        const oficiais = await Oficial.get()
-        return res.render('oficial')
+        return res.render('cadastro-oficial.html')
     },
 
     async save(req, res) {
@@ -38,20 +33,15 @@ module.exports = {
             quadro: req.body.quadro
         })
 
-        return res.redirect('/admin')
+        return res.redirect('/pages/admin')
     },
 
     async show(req, res){
-        const oficiais = await Oficial.get()
         const oficialId = req.params.id
 
-        const oficial = oficiais.find(oficial => Number(oficial.id) === Number(oficialId))
+        const oficial = await OficialService.show(oficialId)
 
-        if(!oficial) {
-            return res.send('Oficial not found!!')
-        }
-
-        return res.render('oficial-edit', {oficial})
+        return res.json(oficial)
     },
 
     async update(req, res) {
@@ -63,8 +53,7 @@ module.exports = {
             posto: req.body.posto,
             quadro: req.body.quadro
         }
-
-        await Oficial.update(updateOficial, oficialId)
+        await OficialService.update(updateOficial, oficialId)
 
         res.redirect('/listar')
     },

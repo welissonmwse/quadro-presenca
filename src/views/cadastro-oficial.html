@@ -5,35 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/platinas/brasao_sgm.png" type="image/png">
-    <link rel="stylesheet" href="/styles/oficial.css">
+    <link rel="stylesheet" href="/styles/cadastro.css">
     
-    <title>Editar|Oficial</title>
+    <title>Cadastro | Oficial</title>
 </head>
 <body>
     <div class="container">
-        <form id="form-oficial" action="/oficial/<%= oficial.id %> " method="POST">
+        <form id="form-oficial" action="/oficial" method="POST">
             <fieldset>
                 <legend>Dados do Ofical</legend>
                 <div class="inpunt-group">
                     <div>
                         <label for="nome">Nome</label>
-                        <input 
-                            type="text" 
-                            id="nome" 
-                            name="nome" 
-                            value="<%= oficial.nome %>"
-                            required 
-                        >
+                        <input type="text" id="nome" name="nome" required >
                     </div>
                     <div>
                         <label for="idorder">Nº ordenação</label>
-                        <input 
-                            type="number" 
-                            id="idorder" 
-                            name="idorder" 
-                            min="1" 
-                            value="<%= oficial.idorder %>"
-                            required>
+                        <input type="number" id="idorder" name="idorder" min="1" required>
                     </div>
                 </div>
                 <div class="select-group">
@@ -41,7 +29,6 @@
                         <label for="posto">Posto</label>
                     
                         <select id="posto" name="posto">
-                            <option value="<%= oficial.posto %>" selected><%= oficial.posto %></option>
                             <option value="AE">AE</option>
                             <option value="VA">VA</option>
                             <option value="CA">CA</option>
@@ -57,24 +44,23 @@
                         <label for="quadro">Quadro</label>
                     
                         <select id="quadro" name="quadro">
-                            <option value="<%= oficial.quadro %>" selected><%= oficial.quadro %></option>
                             <option value="ARM">ARM</option>
                             <option value="IM">IM</option>
                             <option value="T">T</option>
                             <option value="EN">EN</option>
                             <option value="AA">AA</option>
-                            <option value="RM2">RM2</option>
+                            <option value="RM2-T">RM2-T</option>
                         </select>
                     </div>
                 </div>
                 <div class="button-group">
                     <button 
-                    class="button green" 
+                    class="button blue" 
                     form="form-oficial" 
                     type="submit" 
                     title="Salvar Dados">Salvar</button>
                     <a 
-                    href="/listar" 
+                    href="/pages/admin" 
                     class="button red">
                     Cancelar
                     </a>

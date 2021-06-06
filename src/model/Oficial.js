@@ -12,7 +12,8 @@ module.exports = {
             idorder: oficial.idorder,
             nome: oficial.nome,
             posto: oficial.posto,
-            quadro: oficial.quadro
+            quadro: oficial.quadro,
+            status: oficial.status,
         }))
     },
 
@@ -52,6 +53,17 @@ module.exports = {
 
         await db.run(`UPDATE oficiais SET 
         idorder = ${idOrderAcc + 1}
+        WHERE id = ${id}
+        `)
+
+        await db.close()
+    },
+
+    async updateStatus(id, status){
+        const db = await Database()
+        
+        await db.run(`UPDATE oficiais SET
+        status = '${status}'
         WHERE id = ${id}
         `)
 

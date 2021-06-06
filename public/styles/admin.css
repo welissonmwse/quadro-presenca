@@ -1,0 +1,27 @@
+.liga-desliga__checkbox {
+    position: relative;
+    left: -9999px;
+}
+
+.liga-desliga__checkbox:checked + .liga-desliga__botao::before {
+    background: #0092ff;
+}
+
+.liga-desliga__checkbox:checked + .liga-desliga__botao::after {
+    left: 1.025em;
+}
+
+.liga-desliga__checkbox:focus + .liga-desliga__botao::before {
+    outline: 3px dotted #CCC;
+}
+
+footer a{
+    text-decoration: none;
+    color: #FFF;
+    margin: 10px;
+}
+
+footer a:hover{
+    text-decoration: underline;
+    opacity: 0.5;
+}
