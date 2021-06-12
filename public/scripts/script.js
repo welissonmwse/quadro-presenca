@@ -1,7 +1,9 @@
 function renderDate() {
   const date = new Date()
   const options = { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric'};
-  const dateNow = date.toLocaleString('PT-BR', options)
+  const formatDat = date.toLocaleString('PT-BR', options)
+  const dateNow = formatDat.replace('.', '')
+  
   document.querySelector('.data').innerHTML = dateNow
 }
 
